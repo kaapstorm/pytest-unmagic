@@ -12,6 +12,8 @@ magic.
 - [API Reference](api-reference.md): Information-oriented, complete
   technical specification
 
+- [Concepts](concepts.md): Understanding-oriented, philosophy and design
+
 - [Migration Guide](migration-guide.md): Convert from standard pytest
   fixtures step by step
 

@@ -380,3 +380,4 @@ After migrating a file:
 
 - [Tutorial](tutorial.md): Learn from scratch
 - [API Reference](api-reference.md): Complete API details
+- [Concepts](concepts.md) -- Understand the design philosophy

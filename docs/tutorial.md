@@ -430,3 +430,4 @@ next:
 
 - [Migration Guide](migration-guide.md): Convert existing pytest fixtures to unmagic
 - [API Reference](api-reference.md): Complete API details
+- [Concepts](concepts.md): Understand the design philosophy

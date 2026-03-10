@@ -207,6 +207,7 @@ fence.install(["mypackage.tests"])
 | [Tutorial](docs/tutorial.md)               | Hands-on introduction (~30 min)       |
 | [Migration Guide](docs/migration-guide.md) | Convert from standard pytest fixtures |
 | [API Reference](docs/api-reference.md)     | Complete technical reference          |
+| [Concepts](docs/concepts.md)               | Philosophy and design principles      |
 | [FAQ](docs/faq.md)                         | Common questions and troubleshooting  |
 
 ## Compatibility
