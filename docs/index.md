@@ -7,6 +7,8 @@ magic.
 
 ## Documentation Overview
 
+- [Tutorial](tutorial.md): Learning-oriented, hands-on lessons (~30 minutes)
+
 - [API Reference](api-reference.md): Information-oriented, complete
   technical specification
 
