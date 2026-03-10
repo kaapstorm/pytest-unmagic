@@ -205,6 +205,7 @@ fence.install(["mypackage.tests"])
 | Document                                   | Description                           |
 |--------------------------------------------|---------------------------------------|
 | [API Reference](docs/api-reference.md)     | Complete technical reference          |
+| [FAQ](docs/faq.md)                         | Common questions and troubleshooting  |
 
 ## Compatibility
 

@@ -371,3 +371,9 @@ def test_something():
 | **Python**            | 3.9, 3.10, 3.11, 3.12, 3.13 |
 | **pytest**            | 8.1, 8.2, 8.3, 8.4          |
 | **unittest.TestCase** | Yes (via `@use` on class)   |
+
+---
+
+## See Also
+
+- [FAQ](faq.md): Common questions and errors
