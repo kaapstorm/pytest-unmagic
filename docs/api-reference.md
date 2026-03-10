@@ -377,4 +377,5 @@ def test_something():
 ## See Also
 
 - [Tutorial](tutorial.md): Learn through examples
+- [Migration Guide](migration-guide.md): Convert from standard pytest
 - [FAQ](faq.md): Common questions and errors

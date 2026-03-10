@@ -2,6 +2,7 @@
 
 **Time:** ~30 minutes
 **Prerequisites:** Python basics, pytest installed
+**Next:** [Migration Guide](migration-guide.md)
 
 This tutorial teaches pytest-unmagic through hands-on practice. Each
 lesson builds on the previous one.
@@ -427,4 +428,5 @@ migration to explicit fixtures.
 You now know the core features of pytest-unmagic. Here's where to go
 next:
 
+- [Migration Guide](migration-guide.md): Convert existing pytest fixtures to unmagic
 - [API Reference](api-reference.md): Complete API details

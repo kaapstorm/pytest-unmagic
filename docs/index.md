@@ -12,6 +12,9 @@ magic.
 - [API Reference](api-reference.md): Information-oriented, complete
   technical specification
 
+- [Migration Guide](migration-guide.md): Convert from standard pytest
+  fixtures step by step
+
 - [FAQ](faq.md): Common questions, error messages, and troubleshooting
 
 - [CHANGELOG](https://github.com/dimagi/pytest-unmagic/blob/main/CHANGELOG.md):
