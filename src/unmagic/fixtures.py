@@ -314,3 +314,30 @@ def _apply_django_db_marker(item, fixtures):
         if kwargs is not None:
             item.add_marker(marker(**kwargs))
             return
+
+
+def pytest_collection_modifyitems(items):
+    """Ensure pytest-django sets up the test database when needed.
+
+    pytest-django decides at collection time which databases to set up
+    by scanning each item's fixturenames and django_db markers. Unmagic
+    fixtures resolve lazily, and fixtures often call other fixtures from
+    their bodies (instead of declaring them via @use), so transitive DB
+    requirements are invisible at collection time.
+
+    Without intervention, ``setup_databases`` is called with an empty
+    alias set, the test database is never created, and connections fall
+    through to the production database with a schema mismatch.
+
+    If any test uses unmagic fixtures and no test is marked django_db,
+    mark one to ensure pytest-django sets up the default test database.
+    """
+    marker = getattr(pytest.mark, "django_db", None)
+    if marker is None:
+        return
+    if any(it.get_closest_marker("django_db") for it in items):
+        return
+    for it in items:
+        if getattr(it.obj, "unmagic_fixtures", None):
+            it.add_marker(marker())
+            return
