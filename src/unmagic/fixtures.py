@@ -288,3 +288,29 @@ def pytest_itemcollected(item):
         for fixture in fixtures:
             if not fixture._is_registered_for(item):
                 fixture._register(item)
+        _apply_django_db_marker(item, fixtures)
+
+
+# pytest-django fixtures that, when used via @use(...), require the test
+# database. pytest-django decides at collection time whether to create the
+# test database by scanning each item's fixturenames and django_db markers
+# (see pytest_django/plugin.py). Because unmagic resolves fixtures lazily
+# via getfixturevalue, the names of fixtures requested via @use are not in
+# item.fixturenames at collection time. Apply the corresponding marker
+# here so pytest-django's collection-time check finds it.
+_DJANGO_DB_FIXTURES = {
+    "db": {},
+    "transactional_db": {"transaction": True},
+    "live_server": {"transaction": True},
+}
+
+
+def _apply_django_db_marker(item, fixtures):
+    marker = getattr(pytest.mark, "django_db", None)
+    if marker is None or item.get_closest_marker("django_db") is not None:
+        return
+    for fixture in fixtures:
+        kwargs = _DJANGO_DB_FIXTURES.get(getattr(fixture, "_id", None))
+        if kwargs is not None:
+            item.add_marker(marker(**kwargs))
+            return
